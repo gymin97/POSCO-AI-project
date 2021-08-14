@@ -28,33 +28,36 @@ $ git clone https://github.com/goruck/models/tree/edge-tpu-train
    ```
 4. config 수정 <br/>
    configs/radar-ml 안의 pipeline_mobilenet_v2_ssd_retrain_last_few_layers.config 수정<br/>
-   파일 내부 세가지 항목을 데이터에 맞게 수정
-   ```
-   num_classes
-   input_path
-   label_map_path 
-   ```
-   이후 수정한 파일을 configs/ 아래에 위치 시킴
+   파일 내부 세가지 항목을 데이터에 맞게 수정 -> 이후 수정한 파일을 configs/ 아래에 위치 시킴 <br/>
+       ```
+       num_classes
+       input_path
+       label_map_path 
+       ``` 
+<br/>
+
 5. Re-train model 
-  ```
-  $ train.sh \
-  --pipeline_config_path ./configs/pipeline_mobilenet_v2_ssd_retrain_last_few_layers.config \
-  --num_training_steps 1400
-  ```
-  
+      ```
+      $ train.sh \
+      --pipeline_config_path ./configs/pipeline_mobilenet_v2_ssd_retrain_last_few_layers.config \
+      --num_training_steps 1400
+      ```
+<br/>  
+
 6. Compile model (tflite, Edge TPU)
-```
-$ convert_checkpoint_to_edgetpu.sh \
---pipeline_config_path ./configs/pipeline_mobilenet_v2_ssd_retrain_last_few_layers.config \
---checkpoint_num 1400
-```
-  ** 학습하면서 저장된 다른 ckpt파을을 사용하고싶다면 checkpoint_num 숫자 수정 
+    ```
+    $ convert_checkpoint_to_edgetpu.sh \
+    --pipeline_config_path ./configs/pipeline_mobilenet_v2_ssd_retrain_last_few_layers.config \
+    --checkpoint_num 1400
+    ```
+    ** 학습하면서 저장된 다른 ckpt파을을 사용하고싶다면 checkpoint_num 숫자 수정 
+<br/>
 
 7. test 결과
   6단계에서 생성된 complie 파일을 라즈베리 파일에 옮겨 실험해보았다 
-  - STOP sign <br/>
-  ![image](https://user-images.githubusercontent.com/76406136/129432754-16674f69-84af-4d1e-99bf-024f741ca9cd.png)
-  - 60 limit sign <br/>
-  ![image](https://user-images.githubusercontent.com/76406136/129432768-f4026499-f04f-4563-81cc-9dd5346bedef.png)
-  - SLOW sign <br/>
-  ![image](https://user-images.githubusercontent.com/76406136/129432777-fe0fb1a5-63e0-464b-a961-a9c238001551.png)
+      - STOP sign <br/>
+      ![image](https://user-images.githubusercontent.com/76406136/129432754-16674f69-84af-4d1e-99bf-024f741ca9cd.png)
+      - 60 limit sign <br/>
+      ![image](https://user-images.githubusercontent.com/76406136/129432768-f4026499-f04f-4563-81cc-9dd5346bedef.png)
+      - SLOW sign <br/>
+      ![image](https://user-images.githubusercontent.com/76406136/129432777-fe0fb1a5-63e0-464b-a961-a9c238001551.png)

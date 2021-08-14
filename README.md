@@ -2,10 +2,10 @@
 - 동키카 4.0과 Object Detection (SSD Mobilenet V2)을 이용하여 야간 자율주행 프로젝트를 진행하였습니다.
   - 소켓통신이아닌 google coral edge tpu에 Object detection 모델을 업로드하여 객체탐지를 진행하였습니다.      
 - 프로젝트를 진행하며 YOLOv5, YOLOv4, SSD MobileNetv2 transfer learning 모델을 실험하였고 해당 레포지토리에서는 3가지 모델을 transfer learning하는 가이드라인을 제시합니다.
-- Image Labeling Tool은 [Roboflow](https://app.roboflow.com/)을 이용하였습니다.
+- Image Labeling Tool은 [Roboflow](https://app.roboflow.com/)을 이용하였습니다. <br/><br/>
 
-__Coral USB Accelator (Edge TPU)에 딥러닝 모델을 사용하고자하는 경우__
---
+
+### Coral USB Accelator (Edge TPU)에 딥러닝 모델을 사용하고자하는 경우
 Coral USB Accelator = USB 포트에 연결하기만하면 광범위한 시스템에서 고속머신러닝이 가능하도록 하는 장치
 1. Edge TPU를 사용하는경우 tflite(weights file)을 Edge TPU model로 컴파일하는 과정이 필요합니다 <br/> 
 ![image](https://user-images.githubusercontent.com/76406136/129430909-c4721ff7-0847-43d2-816c-8a4b18f47195.png)

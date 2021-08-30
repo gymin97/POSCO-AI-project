@@ -18,7 +18,7 @@ Coral USB Accelator = USB 포트에 연결하기만하면 광범위한 시스템
     **TensorFlow 2.0의 TFLite Converter가 양자화 과정 중 uint8 입/출력을 지원하지 않고 있기 때문에 TensorFlow 2.0 자체는 Edge TPU를 지원하지 않고 있다.** <br/> 
 [[Edge TPU 모델 생성 나머지 조건 확인하기](https://grip.news/archives/1800)]         [[참고하면 좋을 Edge TPU FAQ](https://grip.news/archives/1805)] <br/>
 
-3. Transfet learning <br/>
+3. Transfer learning <br/>
   [google 공식 문서](https://coral.ai/docs/edgetpu/retrain-detection/#requirements) 참고
   
   

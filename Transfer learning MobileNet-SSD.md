@@ -21,7 +21,7 @@ $ git clone https://github.com/goruck/models/tree/edge-tpu-train
     $ python3 ./create_tf_record.py --dataset_name [DataSet명]
     ```
   
-3. Pre-trained medel [다운로드](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03.tar.gz)<br/>
+3. Pre-trained model [다운로드](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03.tar.gz)<br/>
    압축해제
    ```
    $ tar -xzvf ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03.tar.gz 
@@ -31,8 +31,12 @@ $ git clone https://github.com/goruck/models/tree/edge-tpu-train
    파일 내부 세가지 항목을 데이터에 맞게 수정 -> 이후 수정한 파일을 configs/ 아래에 위치 시킴 <br/>
        ```
        num_classes
+       ```
+       ```
        input_path
-       label_map_path 
+       ```
+       ```
+       label_map_path
        ``` 
 <br/>
 
